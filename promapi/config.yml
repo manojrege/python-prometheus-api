@@ -1,0 +1,19 @@
+prometheus:
+  default_url: 'http://localhost'
+  default_port: 9090
+  endpoints:
+    instant_query: /api/v1/query
+    range_query: /api/v1/query_range
+    label_matcher_series_query: /api/v1/series
+    label_names_query: /api/v1/labels
+    label_values_query: /api/v1/label/<label_name>/values
+    targets_query: /api/v1/targets
+    rules_query: /api/v1/rules
+    alerts_query: /api/v1/alerts
+    targets_metatdata_query: /api/v1/targets/metadata
+    alermanagers_query: /api/v1/alertmanagers
+    status_config_query: /api/v1/status/config
+    status_flags_query: /api/v1/status/flags
+    tsdb_snapshot_query: /api/v1/admin/tsdb/snapshot
+    tsdb_delete_series_query: /api/v1/admin/tsdb/delete_series
+    clean_tombstones_query: /api/v1/admin/tsdb/clean_tombstones
