@@ -86,7 +86,7 @@ def query_metadata_series(match, start=None, end=None):
     :param match: Repeated series selector argument that selects the series to return
     :param start: Start timestamp
     :param end: End timestamp
-    :return:
+    :return: Finds series by label matchers
     """
     try:
         response = requests.get(
@@ -230,10 +230,11 @@ def query_alerts():
 
 def query_target_metadata(match_target=None, metric=None, limit=None):
     """
+    Returns metadata about metrics scraped by targets
     :param match_target:  Label selectors that match targets by their label sets.
     :param metric: A metric name to retrieve metadata
     :param limit: Maximum number of targets to match
-    :return:
+    :return: Returns metadata about metrics scraped by targets
     """
     try:
         response = requests.get(
@@ -259,8 +260,8 @@ def query_target_metadata(match_target=None, metric=None, limit=None):
 
 def query_alertmanagers():
     """
-    returns an overview of the current state of the Prometheus alertmanager discovery
-    :return:
+    returns info on current state of the Prometheus alertmanager discovery
+    :return: current state of the Prometheus alertmanager discovery
     """
     try:
         response = requests.get(
