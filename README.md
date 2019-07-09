@@ -17,13 +17,13 @@ prometheus.set_endpoint("http://localhost",9090)
 
 # Instant Query
 
-result = prometheus.query_instant("rate(node_network_receive_bytes_total{job=~\"node-exporter\"}[5m])")
+result = prometheus.query_instant("rate(process_cpu_seconds_total{job=\"prometheus\"}[5m])")
 print(result)
 
 
 # Range Query
 
-result = prometheus.query_range("rate(node_network_receive_bytes_total{job=~\"node-exporter\"}[5m])", start=1562261669, end=1562262242, step=60)
+result = prometheus.query_range("rate(process_cpu_seconds_total{job=\"prometheus\"}[5m])", start=1562261669, end=1562262242, step=60)
 print(result)
 
 
@@ -71,7 +71,7 @@ print(result)
 
 # Query Target Metadata
 
-result = prometheus.query_target_metadata("{instance=\"host.docker.internal:9100\"}")
+result = prometheus.query_target_metadata("{job=\"prometheus\"}")
 print(result)
 
 
