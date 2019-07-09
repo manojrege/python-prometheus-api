@@ -17,7 +17,6 @@ prometheus.set_endpoint("http://localhost",9090)
 
 # Instant Query
 
-
 result = prometheus.query_instant("rate(node_network_receive_bytes_total{job=~\"node-exporter\"}[5m])")
 print(result)
 
@@ -45,10 +44,12 @@ print(result)
 result = prometheus.query_label_names()
 print(result)
 
+
 # Query Label Values
 
 result = prometheus.query_label_values('job')
 print(result)
+
 
 # Query Targets
 
@@ -61,10 +62,12 @@ print(result)
 result = prometheus.query_rules()
 print(result)
 
+
 # Query Alerts
 
 result = prometheus.query_alerts()
 print(result)
+
 
 # Query Target Metadata
 
@@ -83,10 +86,12 @@ print(result)
 result = prometheus.query_status_config()
 print(result)
 
+
 # Query Status Flags
 
 result = prometheus.query_status_flags()
 print(result)
+
 
 # Create Snapshot of Current Data
 
