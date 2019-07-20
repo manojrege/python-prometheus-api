@@ -3,7 +3,10 @@ import requests
 from requests.exceptions import HTTPError
 import traceback
 
-config = yaml.safe_load(open("promapi/config.yml"))
+from promapi.__init__ import get_data
+
+config = yaml.safe_load(open(get_data("config.yml")))
+
 
 def set_endpoint(url, port):
     """
